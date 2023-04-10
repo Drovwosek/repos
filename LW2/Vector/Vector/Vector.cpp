@@ -24,7 +24,7 @@ int main()
 
    if (!ParseVector(std::cin, vec))
     {
-       cout << EMPTY_DATA << endl;
+        cout << EMPTY_DATA << endl;
         return 1;
     }
 

@@ -13,7 +13,8 @@ bool ParseVector(istream& input, vector<float>& vec)
     istream_iterator<double> eos;//ссылается на элемент после конечного
     istream_iterator<double> iit(cin);
 
-    while (iit != eos) { //перебираем до равенства
+    while (iit != eos) 
+    { //перебираем до равенства
         
         iit++;
     }
@@ -41,7 +42,10 @@ vector<float> ProcessVector(vector<float>& vec)
 
     float min = *minElement;
 
-    auto MultiplyOnMinElement = [min](float& num) {return num = round(num * min * 1000) / 1000; };
+    auto MultiplyOnMinElement = [min](float& num) 
+    {
+        return num = round(num * min * 1000) / 1000; 
+    };
 
     transform(vec.begin(), vec.end(), vec.begin(), MultiplyOnMinElement);
 
