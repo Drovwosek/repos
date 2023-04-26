@@ -1,4 +1,4 @@
-#include "../../../repos/catch/catch.hpp"
+#include "../../../catch/catch.hpp"
 #include "../SimpleNumbers/PrimeGenerator.h"
 
 using namespace std;

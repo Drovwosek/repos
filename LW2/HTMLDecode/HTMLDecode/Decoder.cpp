@@ -14,7 +14,7 @@ const map<string, char> HTML_ENTITY_MAP = {
 
 const char AMP = '&';
 
-void CheckSubstring(string const& html, unsigned& pos, char& tmpCh)
+void CheckSubstring(string const& html, unsigned& pos, char tmpCh)
 {
     for (auto& decodeEntity : HTML_ENTITY_MAP)
     {
@@ -35,9 +35,8 @@ string HTMLDecode(string const& html)
     {
         if (html[i] == AMP)
         {
-            char tmpCh = AMP;
-            CheckSubstring(html, i, tmpCh); //от i до i + 
-            decodedStr += tmpCh;
+            CheckSubstring(html, i, AMP); //от i до i + 
+            decodedStr += AMP;
         }
         else
         {

@@ -3,79 +3,47 @@
 
 using namespace std;
 
-std::set<int> GeneratePrimeNumbersSet(int upperBound)
+const set<int> EMPTY_SET{};
+
+void ExcludeEvenNumbers(vector<int> sieve, int upperBound)
 {
-    std::set<int> primeNums;
-
-    if (upperBound < 2)
-    {
-        return primeNums;
-    }
-
-    primeNums.insert(2);
-
-    std::vector<int> sieve(upperBound + 1, true);
-
-    for (int i = 4; i < upperBound; i += 2)
+    for (int i = 4; i < upperBound; i += 2) // в функцию "закрыть все чЄтные числа" ? наху€? а главное: зачем?
     {
         sieve[i] = false;
     }
+}
+
+std::set<int> GeneratePrimeNumbersSet(int upperBound)
+{
+    if (upperBound < 2)
+    {
+        return EMPTY_SET;
+    }
+
+    set<int> primeNums{ 2 };
+    
+    vector<int> sieve(upperBound + 1, true);
+
+    ExcludeEvenNumbers(sieve, upperBound);
 
     int sqrtUpperBound = sqrt(upperBound);
-
+    
     for (int i = 3; i <= upperBound; i += 2)
     {
-        if (sieve[i])
+        if (!sieve[i])
         {
-            primeNums.insert(i);
+            continue;
+        }
+        primeNums.insert(i);
 
-            if (i <= sqrtUpperBound)
+        if (i <= sqrtUpperBound)
+        {
+            for (int j = 3 * i; j <= upperBound; j += 2 * i)
             {
-                for (int j = 3 * i; j <= upperBound; j += 2 * i)
-                {
                     sieve[j] = false;
-                }
             }
         }
     }
 
     return primeNums;
 }
-/*
-set<int> GeneratePrimeNumbersSet(int upperBound)
-{
-    set<int> primes;
-
-    if (upperBound < 2)
-    {
-        return primes;
-    }
-
-    vector<int> sieve;
-    sieve.assign(upperBound + 1, true);
-
-    for (int i = 4; i < upperBound; i += 2) // каждый четный: чемодан, вокзал, ...
-    {
-        sieve[i] = false;
-    }
-
-    primes.insert(2);
-
-    for (int i = 3; i < upperBound + 1; i += 2) // каждый непростой из нечетных: чемодан, вокзал, ...
-    {
-        if (!sieve[i])
-        {
-            continue;
-        }
-
-        primes.insert(primes.end(), i);
-
-        for (int j = i * 3; j < upperBound + 1; j = i * 2)
-        {
-            sieve[j] = false;
-        }
-    }
-
-    return primes;
-}
-*/

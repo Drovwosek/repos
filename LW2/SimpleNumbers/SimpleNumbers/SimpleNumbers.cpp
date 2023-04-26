@@ -2,7 +2,14 @@
 #include <set>
 #include <vector>
 #include <optional>
+#include <iterator>
 #include "PrimeGenerator.h"
+
+/*
+    ++вывксти в функцию вывод чисел (мб через copy сделать?)
+    ++static_cast преобразует типы, не надо
+    ++в primeGeneratoer большая вложенность - исправить
+*/
 
 using namespace std;
 
@@ -11,14 +18,9 @@ int main(int argc, char* argv[])
     int upperBound;
     cin >> upperBound;
 
-    set<int> primes = GeneratePrimeNumbersSet(static_cast<size_t>(upperBound));
+    set<int> primes = GeneratePrimeNumbersSet(upperBound);
 
-    for (auto primeNumber : primes)
-    {
-        for(int i = 0; i < 20; i++)
-            cout << primeNumber << " ";
-        cout << endl;
-    }
-    
+    copy(primes.begin(), primes.end(), ostream_iterator<int>(cout, " "));
+        
     return 0;
 }
