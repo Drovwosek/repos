@@ -1,37 +1,46 @@
 #pragma once
+#include <iostream>
 
-enum class MecBox
+enum class Direction : int
 {
-	Reverse, Neutral, First, Second, Third, Fourth, Fifth,
+	Stop = 0,
+	Forward,
+	Backward
 };
 
-enum class Color
+enum class Gear : int
 {
-
+	Reverse = -1,
+	Neutral,
+	First,
+	Second,
+	Third,
+	Fourth,
+	Fifth
 };
-
-class Car // классы - кастомный тип данных 
+/*границы скоростей*/
+class CCar
 {
-	//данные и методы здесь писать
-	
-public:
-	/*GetDirection();
-	IsTurnedOn();
-	GetSpeed();
-	GetGear();*/
+	public:
+		CCar();
 
-private:
-	
+		bool IsEngineOn() const;
+		Direction GetDirection() const;
+		int GetSpeed() const;
+		Gear GetGear() const;
 
+		bool TurnOnEngine();
+		bool TurnOffEngine();
+		bool SetGear(Gear gear);
+		bool SetSpeed(int speed);
 
-	/*описание направления движения:
-		через класс direction
-		или через скорость
-	*/
+	private:
+		bool m_isEngineOn;
+		int m_speed;
+		Gear m_gear;
+
+		 /*[[nodiscard]]???*/
+		 bool SetReverseGear();
+		 bool SetGearWhenDirectionIsBack(Gear gear);
+		 bool SpeedInGearRange(int speed, Gear gear) const;
 };
-//разделять понятия свойство и поле
-
-int main()
-{
-	Car car1; // ээкземпляр класса готов к использованию
-}

@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
-    <ClCompile Include="CCar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCar.h" />
