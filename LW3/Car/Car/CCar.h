@@ -18,13 +18,27 @@ enum class Gear : int
 	Fourth,
 	Fifth
 };
-/*границы скоростей*/
+/*
+	границы скоростей:
+	reverse speed how to regiester? ну ты и долбоеб русский не знаешь
+	Direction(Speed) 
+*/
+const int SPEED_RANGE[][2] = {
+	{-20, 0},
+	{-20, 150},
+	{0, 30},
+	{20, 50},
+	{30, 60},
+	{40, 90},
+	{50, 150}
+};
+
 class CCar
 {
 	public:
-		CCar();
+		CCar();		
 
-		bool IsEngineOn() const;
+		bool IsTurnedOn() const;
 		Direction GetDirection() const;
 		int GetSpeed() const;
 		Gear GetGear() const;
@@ -38,9 +52,13 @@ class CCar
 		bool m_isEngineOn;
 		int m_speed;
 		Gear m_gear;
+		
+		bool SetSpeedBackwardOnNewtralGear(const int speed);
+		bool SetSpeedForwardOnNewtralGear(const int speed);
+		bool SetSpeedReverseGear(const int speed);
+		bool SetSpeedForward(const int speed);
 
-		 /*[[nodiscard]]???*/
-		 bool SetReverseGear();
-		 bool SetGearWhenDirectionIsBack(Gear gear);
-		 bool SpeedInGearRange(int speed, Gear gear) const;
+		int GearToInt(const Gear& gear);
+		bool IsGearInRange(const Gear& gear);
+		bool IsSpeedInRange(const int& speed);
 };

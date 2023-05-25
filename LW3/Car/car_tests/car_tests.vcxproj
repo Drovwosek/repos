@@ -140,6 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Car\Car.cpp" />
+    <ClCompile Include="..\Car\CarController.cpp" />
     <ClCompile Include="car_tests.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
