@@ -59,6 +59,10 @@ Gear CCarController::IntToGear(const int& gear)
 	case 5:
 		return Gear::Fifth;
 		break;
+	default:
+		assert(false);
+		return Gear::Neutral;
+		break;
 	}
 };
 
@@ -86,6 +90,10 @@ int CCarController::GearToInt(const Gear& gear)
 		break;
 	case Gear::Fifth:
 		return 5;
+		break;
+	default:
+		assert(false);
+		return 0;
 		break;
 	}
 };
