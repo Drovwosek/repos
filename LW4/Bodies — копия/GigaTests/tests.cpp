@@ -1,5 +1,4 @@
-﻿
-#include <catch.hpp>
+﻿#include <catch/catch.hpp>
 
 #include "../bodies/CSphere.h"
 #include "../bodies/CParallelepiped.h"

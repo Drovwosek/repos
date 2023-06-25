@@ -1,3 +1,3 @@
-﻿#include <iostream>
-#define CATCH_CONFIG_MAIN﻿
-#include "../../../catch/catch.hpp"
+﻿#define CATCH_CONFIG_MAIN﻿
+#include <iostream>
+#include <catch.hpp>

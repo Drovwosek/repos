@@ -9,67 +9,61 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Файлы ресурсов">
+    <Filter Include="Файлы для тестов">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bodies_tests.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Bodies\CBody.cpp">
+    <ClCompile Include="tests.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\Bodies\CBodyController.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="..\Bodies\CBody.cpp">
+      <Filter>Файлы для тестов</Filter>
     </ClCompile>
     <ClCompile Include="..\Bodies\CCompound.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClCompile>
     <ClCompile Include="..\Bodies\CCone.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClCompile>
     <ClCompile Include="..\Bodies\CCylinder.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClCompile>
     <ClCompile Include="..\Bodies\CParallelepiped.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClCompile>
     <ClCompile Include="..\Bodies\CSolidBody.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClCompile>
     <ClCompile Include="..\Bodies\CSphere.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Bodies\CBody.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Bodies\CBodyController.h">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClInclude>
     <ClInclude Include="..\Bodies\CCompound.h">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClInclude>
     <ClInclude Include="..\Bodies\CCone.h">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClInclude>
     <ClInclude Include="..\Bodies\CCylinder.h">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClInclude>
     <ClInclude Include="..\Bodies\CParallelepiped.h">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClInclude>
     <ClInclude Include="..\Bodies\CSolidBody.h">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClInclude>
     <ClInclude Include="..\Bodies\CSphere.h">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы для тестов</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
