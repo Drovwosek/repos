@@ -9,7 +9,6 @@ public:
 	double GetBaseRadius() const;
 	double GetHeight() const;
 	double GetVolume() const override;
-
 private:
 	double m_baseRadius;
 	double m_height;

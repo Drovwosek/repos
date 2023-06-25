@@ -8,7 +8,6 @@ public:
 
 	double GetMass() const override;
 	double GetDensity() const override;
-
 private:
 	double m_density;
 };

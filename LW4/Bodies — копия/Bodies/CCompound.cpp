@@ -3,7 +3,6 @@
 CCompound::CCompound()
 	: CBody("compound")
 {
-
 };
 
 bool CCompound::AddCompound(const BodyPtr& child)

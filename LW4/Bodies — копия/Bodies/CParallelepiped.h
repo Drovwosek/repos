@@ -10,7 +10,6 @@ public:
 	double GetHeight() const;
 	double GetDepth() const;
 	double GetVolume() const override;
-
 private:
 	double m_height;
 	double m_width;
