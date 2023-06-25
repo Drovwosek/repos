@@ -175,6 +175,8 @@ bool CBodyController::ReadNum(std::istream& args, double& num)
 	}
 	catch (const std::invalid_argument& e)
 	{
+		std::cout << e.what();
 		return false;
 	}
+	
 };
