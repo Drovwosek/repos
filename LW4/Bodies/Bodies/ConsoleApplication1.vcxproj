@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7fed69a4-d8a2-433b-8ee3-da6b34504d78}</ProjectGuid>
-    <RootNamespace>cartests</RootNamespace>
+    <ProjectGuid>{6b0012b5-2e66-4d59-8217-dfb9c9aef52a}</ProjectGuid>
+    <RootNamespace>ConsoleApplication1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Body</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -116,15 +117,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>$(TargetPath)</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -143,14 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Car\Car.cpp" />
-    <ClCompile Include="..\Car\CarController.cpp" />
-    <ClCompile Include="car_tests.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="CBody.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Car\CarController.h" />
-    <ClInclude Include="..\Car\CCar.h" />
+    <ClInclude Include="CBody.h" />
+    <ClInclude Include="CSolidBody.h" />
+    <ClInclude Include="CSphere.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

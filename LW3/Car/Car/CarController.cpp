@@ -28,7 +28,8 @@ bool CCarController::HandleCommand()
 	auto it = m_actionMap.find(action);
 	if (it != m_actionMap.end())
 	{
-		return it->second(strm);
+		it->second(strm);
+		return true;
 	}
 
 	return false;

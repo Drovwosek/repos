@@ -15,25 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="car_tests.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Car\Car.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Car\CarController.cpp">
+    <ClCompile Include="CBody.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Car\CCar.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="CBody.h">
+      <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="..\Car\CarController.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="CSphere.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="CSolidBody.h">
+      <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -82,29 +82,29 @@ int CCar::GearToInt(const Gear& gear)
 	{
 	case Gear::Reverse:
 		return -1;
-		break;
+		
 	case Gear::Neutral:
 		return 0;
-		break;
+		
 	case Gear::First:
 		return 1;
-		break;
+		
 	case Gear::Second:
 		return 2;
-		break;
+		
 	case Gear::Third:
 		return 3;
-		break;
+		
 	case Gear::Fourth:
 		return 4;
-		break;
+		
 	case Gear::Fifth:
 		return 5;
-		break;
+		
 	default:
 		assert(false);
 		return 0;
-		break;
+		
 	}
 };
 

@@ -1,11 +1,13 @@
 ﻿#include "/Windows/../Users/ftr5w/source/repos/catch/catch.hpp"
 #include "../Car/CCar.h"
 #include "../Car/CarController.h"
-TEST_CASE("Engine tests")/*In Engine we doing turn on and off Engine and swap Gear (CarController)*/
-{
-	CCar car;
 
+TEST_CASE("Check work of engine")
+{
+	CCar car;	
 	REQUIRE(car.TurnOnEngine());
+
+	REQUIRE(car.IsTurnedOn());
 
 	REQUIRE(car.SetGear(Gear::First));
 	REQUIRE(car.GetGear() == Gear::First);
@@ -16,14 +18,28 @@ TEST_CASE("Engine tests")/*In Engine we doing turn on and off Engine and swap Ge
 	REQUIRE(car.SetGear(Gear::Neutral));
 	REQUIRE(car.GetGear() == Gear::Neutral);
 	REQUIRE(!car.TurnOffEngine());
-		
+	
 	REQUIRE(car.SetGear(Gear::First));
 	REQUIRE(car.GetGear() == Gear::First);
 	REQUIRE(!car.TurnOffEngine());
+};
+
+TEST_CASE("eating excrements")
+{
+	CCar car;
+	REQUIRE(car.TurnOffEngine());
+	REQUIRE(car.TurnOffEngine() == true);
+
+	REQUIRE(car.TurnOnEngine());
+	REQUIRE(car.SetGear(Gear::Neutral));
+	REQUIRE(car.GetSpeed() == 0);
+
+	REQUIRE(car.TurnOffEngine());
+	REQUIRE(car.TurnOffEngine() == true);
 
 }
 
-TEST_CASE("Test reverse gear")/*Testing reverse: */
+TEST_CASE("Check work reverse gear")
 {
 	CCar car;
 	car.TurnOnEngine();
@@ -39,23 +55,22 @@ TEST_CASE("Test reverse gear")/*Testing reverse: */
 	REQUIRE(car.GetGear() == Gear::Neutral);
 	REQUIRE(!car.SetGear(Gear::Reverse));
 
-	
+
 	REQUIRE(!car.SetSpeed(11));
 	REQUIRE(car.SetSpeed(5));
 	REQUIRE(car.GetSpeed() == 5);
+};
 
-}
-
-TEST_CASE("Test neutral gear") 
+TEST_CASE("Check work neutral gear")
 {
 	CCar car;
-	car.TurnOnEngine();
 
 	REQUIRE(!car.SetGear(Gear::Reverse));
 	REQUIRE(!car.SetGear(Gear::First));
 	REQUIRE(car.SetGear(Gear::Neutral));
 
 	car.TurnOnEngine();
+
 	REQUIRE(car.SetGear(Gear::First));
 	REQUIRE(car.GetGear() == Gear::First);
 	REQUIRE(car.SetSpeed(20));
@@ -67,13 +82,13 @@ TEST_CASE("Test neutral gear")
 	REQUIRE(car.GetSpeed() == 10);
 
 	REQUIRE(!car.SetSpeed(-1));
+};
 
-}
-TEST_CASE("Test speed and gear connection")
+TEST_CASE("Check set gear and set speed")
 {
 	CCar car;
 	car.TurnOnEngine();
-		
+
 	REQUIRE(car.SetGear(Gear::First));
 	REQUIRE(car.GetGear() == Gear::First);
 	REQUIRE(!car.SetSpeed(-1));
@@ -125,4 +140,32 @@ TEST_CASE("Test speed and gear connection")
 	REQUIRE(car.SetSpeed(150));
 	REQUIRE(car.GetSpeed() == 150);
 	REQUIRE(!car.SetSpeed(151));
+};
+
+
+TEST_CASE("Get Direction test")
+{
+	CCar car;
+	car.TurnOnEngine();
+
+	REQUIRE(car.SetGear(Gear::Neutral));
+	REQUIRE(!car.SetSpeed(0));
+	REQUIRE(car.GetDirection() == Direction::Stop);
+
+	REQUIRE(car.SetGear(Gear::First));
+	REQUIRE(car.SetSpeed(10));
+	REQUIRE(car.GetDirection() == Direction::Forward);
+
+	REQUIRE(car.SetSpeed(0));
+
+	REQUIRE(car.SetGear(Gear::Reverse));
+	REQUIRE(car.SetSpeed(10));
+	REQUIRE(car.GetDirection() == Direction::Backward);
 }
+/*
+
+	IsTurnedOn
+	GetDirection
+	TurnOffEngine - true
+	 
+*/
