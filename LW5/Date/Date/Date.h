@@ -5,7 +5,7 @@
 
 const int MIN_DAYS = 0;
 const int MAX_DAYS = 2932896;
-const int MIN_YEARS = 1970;
+const int MIN_YEAR = 1970;
 const int MAX_YEAR = 9999;
 const int QUANTITY_DAYS_LEAP_YEAR = 366;
 const int QUANTITY_DAYS_YEAR = 365;
@@ -31,6 +31,7 @@ enum class Month
 	OCTOBER,
 	NOVEMBER,
 	DECEMBER
+	/*JAMAL */
 };
 
 enum class WeekDay
