@@ -12,7 +12,7 @@ CDate::CDate(unsigned day, Month month, unsigned year)
 	{
 		throw "The day is out of range for the month";
 	}
-
+	/*вынести проверки в отдельную функцию*/
 	m_days = -1;
 	m_days += CountDaysInYears(year);
 	m_days += CountDaysInMonths(month, year);

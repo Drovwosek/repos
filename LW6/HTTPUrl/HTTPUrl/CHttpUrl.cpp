@@ -32,7 +32,6 @@ CHttpUrl::CHttpUrl(std::string const& url)
 	{
 		throw CUrlParsingError("unknown url format");
 	}
-	/*	if (!matches[HOST_MATCH].length()){		throw CUrlParsingError("domain not found");	}*/
 
 	m_protocol = ParseProtocol(matches[PROTOCOL_MATCH]);
 	m_port = ParsePort(matches[PORT_MATCH]);
@@ -119,7 +118,7 @@ Protocol CHttpUrl::ParseProtocol(string const& protocol)
 		return Protocol::HTTPS;
 	}
 
-	//throw CUrlParsingError("error while parsing protocol");
+	throw CUrlParsingError("error while parsing protocol");
 }
 
 string CHttpUrl::ParseDomain(std::string const& domain)
@@ -190,9 +189,9 @@ Port CHttpUrl::MapProtocolToPort(Protocol protocol)
 		return DEFAULT_HTTP_PORT;
 	case Protocol::HTTPS:
 		return DEFAULT_HTTPS_PORT;
-	default:
+	/*default:
 		assert(false);
-		return 0;
+		return 0;*/
 	}
 }
 

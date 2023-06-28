@@ -242,9 +242,3 @@ TEST_CASE("Check operator input and output stream")
 	REQUIRE(info.GetYear() == 1970);
 };
 
-/*
-TEST_CASE("fisting")
-{
-	CDate date1(3, Month::JAMAL, 1970);
-	REQUIRE(!date1.IsValid());
-};*/
