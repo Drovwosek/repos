@@ -35,14 +35,14 @@ class CMyList
 				delete prev;
 			}
 		}
-		std::optional<T> data;
 
+		std::optional<T> data;
 		CMyListMember* prev;
 		CMyListMember* next;
 
 	};
 
-public:/*smoke this weed more: зачем итератор и конст итератор*/
+public:/*smoke this weed more: зачем итератор и конст итератор? - чтоб не изменчть ничего, че тупой чтоли*/
 	using Iterator = CListIterator<CMyListMember, T>; 
 	using ConstIterator = CListIterator<CMyListMember, const T>; 
 

@@ -36,11 +36,12 @@ private:
 	CMyListMember* m_pNode;
 };
 
-template <typename CMyListMember, typename Data>
+template <typename CMyListMember, typename Data> /*создаю объекты итератора, которые будут указывать на конкретные узлы в списке*/
 CListIterator<CMyListMember, Data>::CListIterator(CMyListMember* value)
 	: m_pNode(value)
 {}
 
+/*взять текущий и полученый и исполнить*/
 template <typename CMyListMember, typename Data>
 bool CListIterator<CMyListMember, Data>::operator==(const CListIterator<CMyListMember, Data>& it) const
 {
